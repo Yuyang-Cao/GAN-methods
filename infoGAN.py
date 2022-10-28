@@ -153,7 +153,6 @@ class INFOGAN():
         plt.show()
         plt.close()
 
-
 if __name__ == '__main__':
     infogan = INFOGAN()
     infogan.train(epochs=50000, batch_size=128, sample_interval=50)
