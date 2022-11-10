@@ -11,6 +11,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class INFOGAN():
+    #initialize the parameters for this GAN. MNIST data is 28*28*1 on greyscale, and we set class=10 for 10 digits, latent_dim is 72 by convention.
     def __init__(self):
         self.img_rows = 28
         self.img_cols = 28
@@ -43,6 +44,7 @@ class INFOGAN():
     def build_generator(self):
         model = Sequential()
         
+        #similar to VGG-16
         model.add(Dense(128*7*7, activation = 'relu', input_dim = self.latent_dim))
         model.add(Reshape((7,7,128)))
         model.add(BatchNormalization(momentum=0.8))
